@@ -64,7 +64,7 @@ module Graphiti
         def filter_string_match(scope, attribute, value, is_not: false)
           clause = sanitized_like_for(scope, attribute, value) do |v|
             "%#{v}%"
-          }
+          end
           is_not ? scope.where.not(clause) : scope.where(clause)
         end
 
